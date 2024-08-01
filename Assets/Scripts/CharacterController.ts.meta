@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: 4008656d4f1d07444bb281eddbf7d14f
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nconst
+    ZEPETO_Character_Controller_1 = require(\\\"ZEPETO.Character.Controller\\\");\\r\\nclass
+    CharacterController extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n   
+    Start() {\\r\\n        //\uD2B9\uC815 ID\uB85C \uB85C\uB4DC\uD558\uAE30\\r\\n       
+    $extension(\\\"ZEPETO.Character.Controller.ZepetoPlayersExtension\\\").CreatePlayerWithZepetoId(ZEPETO_Character_Controller_1.ZepetoPlayers.instance,
+    \\\"\\\", \\\"neoskyclad\\\", new ZEPETO_Character_Controller_1.SpawnInfo(),
+    true);\\r\\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\\r\\n            const player = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer;\\r\\n       
+    });\\r\\n        //\uC811\uC18D\uD55C ID\uB85C \uB85C\uB4DC\uD558\uAE30\\r\\n       
+    // ZepetoPlayers.instance.CreatePlayerWithUserId(WorldService.userId, new SpawnInfo(),
+    true);\\r\\n        // ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\\r\\n        //     const player: LocalPlayer = ZepetoPlayers.instance.LocalPlayer;\\r\\n       
+    // })\\r\\n    }\\r\\n}\\r\\nexports.default = CharacterController;\\r\\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2hhcmFjdGVyQ29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNoYXJhY3RlckNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFDckQsNkVBQW1GO0FBR25GLE1BQXFCLG1CQUFvQixTQUFRLHFDQUFxQjtJQUVsRSxLQUFLO1FBQ0QsYUFBYTtRQUNiLGlFQUF1Qix3QkFBd0IsQ0FBL0MsMkNBQWEsQ0FBQyxRQUFRLEVBQTBCLEVBQUUsRUFBRSxZQUFZLEVBQUUsSUFBSSx1Q0FBUyxFQUFFLEVBQUUsSUFBSSxFQUFFO1FBQ3pGLDJDQUFhLENBQUMsUUFBUSxDQUFDLGtCQUFrQixDQUFDLFdBQVcsQ0FBQyxHQUFHLEVBQUU7WUFDdkQsTUFBTSxNQUFNLEdBQWdCLDJDQUFhLENBQUMsUUFBUSxDQUFDLFdBQVcsQ0FBQztRQUNuRSxDQUFDLENBQUMsQ0FBQTtRQUVGLGNBQWM7UUFDZCw2RkFBNkY7UUFDN0YsZ0VBQWdFO1FBQ2hFLHNFQUFzRTtRQUN0RSxLQUFLO0lBRVQsQ0FBQztDQUVKO0FBakJELHNDQWlCQyJ9\",\"assetPath\":\"Assets/CharacterController.ts\",\"manifest\":{\"properties\":[],\"name\":\"CharacterController\",\"description\":\"\",\"hasAnimatorMove\":false},\"isCompiled\":true}"
+  typescriptHash: ec1424fffdd2db41e23d9317402a0037
+  onlyWriteTrigger: 0
