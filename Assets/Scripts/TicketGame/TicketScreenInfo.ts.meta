@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 11c3a0f8ef818da4c89276db36a13b27
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
+    TicketScreenInfo extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    SetScreenInfo(_movieName,
+    _theaterNum, _round, _dimension, _age) {\r\n        this.movieName = _movieName;\r\n       
+    this.theaterNum = _theaterNum;\r\n        this.round = _round;\r\n        this.dimension
+    = _dimension;\r\n        this.age = _age;\r\n        this.screenInfoText.text
+    = `${this.movieName} + '' | '' + ${this.theaterNum} + '' | '' +\n        ${this.round}
+    + '' | '' + ${this.dimension} + '', '' + ${this.age}`;\r\n    }\r\n}\r\nexports.default
+    = TicketScreenInfo;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0U2NyZWVuSW5mby5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIlRpY2tldFNjcmVlbkluZm8udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSxpREFBcUQ7QUFHckQsTUFBcUIsZ0JBQWlCLFNBQVEscUNBQXFCO0lBUy9ELGFBQWEsQ0FBQyxVQUFrQixFQUFFLFdBQW1CLEVBQUUsTUFBYyxFQUFFLFVBQWtCLEVBQUUsSUFBWTtRQUNuRyxJQUFJLENBQUMsU0FBUyxHQUFHLFVBQVUsQ0FBQztRQUM1QixJQUFJLENBQUMsVUFBVSxHQUFHLFdBQVcsQ0FBQztRQUM5QixJQUFJLENBQUMsS0FBSyxHQUFHLE1BQU0sQ0FBQztRQUNwQixJQUFJLENBQUMsU0FBUyxHQUFHLFVBQVUsQ0FBQztRQUM1QixJQUFJLENBQUMsR0FBRyxHQUFHLElBQUksQ0FBQztRQUVoQixJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksR0FBRyxHQUFHLElBQUksQ0FBQyxTQUFTLGNBQWMsSUFBSSxDQUFDLFVBQVU7VUFDdkUsSUFBSSxDQUFDLEtBQUssY0FBYyxJQUFJLENBQUMsU0FBUyxhQUFhLElBQUksQ0FBQyxHQUFHLEVBQUUsQ0FBQztJQUNwRSxDQUFDO0NBQ0o7QUFuQkQsbUNBbUJDIn0=","assetPath":"Assets/Scripts/TicketGame/TicketScreenInfo.ts","manifest":{"properties":[{"assembly":"ZEPETO.World.Gui","name":"screenInfoText","type":"ZEPETO.World.Gui.ZepetoText","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"TicketScreenInfo","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 02fad7def28e6011c5b44517a233e106
+  onlyWriteTrigger: 0

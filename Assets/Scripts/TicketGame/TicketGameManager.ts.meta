@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 7d91a81289c58d04b9ba44ce3f24332d
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    TicketGuest_1 = require(\"./TicketGuest\");\r\nconst Timer_1 = require(\"./Timer\");\r\nconst
+    TicketScreenInfo_1 = require(\"./TicketScreenInfo\");\r\nconst UnityEngine_1
+    = require(\"UnityEngine\");\r\nconst Ticket_1 = require(\"./Ticket\");\r\nclass
+    TicketGameManager extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor()
+    {\r\n        super(...arguments);\r\n        this.timerSec = 60;\r\n    }\r\n   
+    Awake() {\r\n        this.timer = this.timerObject.GetComponent($typeof(Timer_1.default));\r\n       
+    this.ticketGuest = this.ticketGuestObject.GetComponent($typeof(TicketGuest_1.default));\r\n       
+    this.ticketScreenInfo = this.ticketScreenInfoObject.GetComponent($typeof(TicketScreenInfo_1.default));\r\n       
+    this.ticket = this.ticketObject.GetComponent($typeof(Ticket_1.default));\r\n   
+    }\r\n    Start() {\r\n        this.timer.StartTimer(this.timerSec);\r\n    }\r\n}\r\nexports.default
+    = TicketGameManager;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0R2FtZU1hbmFnZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUaWNrZXRHYW1lTWFuYWdlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFzRDtBQUN0RCwrQ0FBd0M7QUFDeEMsbUNBQTRCO0FBQzVCLHlEQUFrRDtBQUNsRCw2Q0FBeUM7QUFDekMscUNBQThCO0FBRTlCLE1BQXFCLGlCQUFrQixTQUFRLHFDQUFxQjtJQUFwRTs7UUFZVyxhQUFRLEdBQVcsRUFBRSxDQUFDO0lBYWpDLENBQUM7SUFYRyxLQUFLO1FBQ0QsSUFBSSxDQUFDLEtBQUssR0FBRyxJQUFJLENBQUMsV0FBVyxDQUFDLFlBQVksU0FBQyxlQUFLLEVBQUcsQ0FBQztRQUNwRCxJQUFJLENBQUMsV0FBVyxHQUFHLElBQUksQ0FBQyxpQkFBaUIsQ0FBQyxZQUFZLFNBQUMscUJBQVcsRUFBRyxDQUFDO1FBQ3RFLElBQUksQ0FBQyxnQkFBZ0IsR0FBRyxJQUFJLENBQUMsc0JBQXNCLENBQUMsWUFBWSxTQUFDLDBCQUFnQixFQUFHLENBQUM7UUFDckYsSUFBSSxDQUFDLE1BQU0sR0FBRyxJQUFJLENBQUMsWUFBWSxDQUFDLFlBQVksU0FBQyxnQkFBTSxFQUFHLENBQUM7SUFDM0QsQ0FBQztJQUVELEtBQUs7UUFDRCxJQUFJLENBQUMsS0FBSyxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLENBQUM7SUFDekMsQ0FBQztDQUVKO0FBekJELG9DQXlCQyJ9","assetPath":"Assets/Scripts/TicketGame/TicketGameManager.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"timerObject","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"ticketGuestObject","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"ticketScreenInfoObject","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"ticketObject","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"timerSec","type":"System.Single","isArray":false,"initValue":["60"],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"TicketGameManager","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 69084e9c7dfa90bd29162202b62880dc
+  onlyWriteTrigger: 0

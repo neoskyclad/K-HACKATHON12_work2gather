@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: 5613fb0699700334b92feaaff3af3708
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\r\nclass Timer extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    StartTimer(_timerSec) {\r\n        this.timerSec = _timerSec;\r\n       
+    this.StartCoroutine(this.DoStartTimer());\r\n    }\r\n    pad(num) {\r\n       
+    return num.toString().padStart(2, ''0'');\r\n    }\r\n    *DoStartTimer() {\r\n       
+    let tempText = ''0:00'';\r\n        while (this.timerSec >= 0) {\r\n           
+    this.min = Math.floor(this.timerSec / 60);\r\n            this.sec = this.timerSec
+    % 60;\r\n            tempText = `${this.min}:${this.pad(this.sec)}`;\r\n           
+    this.timerText.text = tempText;\r\n            yield new UnityEngine_1.WaitForSeconds(1);\r\n           
+    this.timerSec--;\r\n        }\r\n        this.timerSec = 0;\r\n        console.log(\"Timer
+    Stopped\");\r\n    }\r\n}\r\nexports.default = Timer;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGltZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUaW1lci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFxRDtBQUVyRCw2Q0FBNkM7QUFFN0MsTUFBcUIsS0FBTSxTQUFRLHFDQUFxQjtJQU9wRCxVQUFVLENBQUMsU0FBaUI7UUFDeEIsSUFBSSxDQUFDLFFBQVEsR0FBRyxTQUFTLENBQUM7UUFDMUIsSUFBSSxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMsWUFBWSxFQUFFLENBQUMsQ0FBQztJQUM3QyxDQUFDO0lBRU8sR0FBRyxDQUFDLEdBQVc7UUFDbkIsT0FBTyxHQUFHLENBQUMsUUFBUSxFQUFFLENBQUMsUUFBUSxDQUFDLENBQUMsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUMzQyxDQUFDO0lBRUQsQ0FBQyxZQUFZO1FBQ1QsSUFBSSxRQUFRLEdBQVcsTUFBTSxDQUFDO1FBQzlCLE9BQU8sSUFBSSxDQUFDLFFBQVEsSUFBSSxDQUFDLEVBQUU7WUFDdkIsSUFBSSxDQUFDLEdBQUcsR0FBRyxJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxRQUFRLEdBQUcsRUFBRSxDQUFDLENBQUM7WUFDMUMsSUFBSSxDQUFDLEdBQUcsR0FBRyxJQUFJLENBQUMsUUFBUSxHQUFHLEVBQUUsQ0FBQztZQUU5QixRQUFRLEdBQUcsR0FBRyxJQUFJLENBQUMsR0FBRyxJQUFJLElBQUksQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUM7WUFDL0MsSUFBSSxDQUFDLFNBQVMsQ0FBQyxJQUFJLEdBQUcsUUFBUSxDQUFDO1lBRS9CLE1BQU0sSUFBSSw0QkFBYyxDQUFDLENBQUMsQ0FBQyxDQUFDO1lBQzVCLElBQUksQ0FBQyxRQUFRLEVBQUUsQ0FBQztTQUNuQjtRQUNELElBQUksQ0FBQyxRQUFRLEdBQUcsQ0FBQyxDQUFDO1FBQ2xCLE9BQU8sQ0FBQyxHQUFHLENBQUMsZUFBZSxDQUFDLENBQUM7SUFDakMsQ0FBQztDQUNKO0FBL0JELHdCQStCQyJ9","assetPath":"Assets/Scripts/TicketGame/Timer.ts","manifest":{"properties":[{"assembly":"ZEPETO.World.Gui","name":"timerText","type":"ZEPETO.World.Gui.ZepetoText","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]},{"assembly":"mscorlib","name":"timerSec","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"Timer","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: a33ae9aa2bdca01087a3b81fd97c47d2
+  onlyWriteTrigger: 0

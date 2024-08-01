@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5613fb0699700334b92feaaff3af3708
+guid: 4a4a920d624f8dd47bb1acb9ff4c9f6e
 importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
 ScriptedImporter:
   internalIDToNameTable: []
@@ -20,7 +20,7 @@ ScriptedImporter:
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
     { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
-    Timer extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n   
-    }\r\n}\r\nexports.default = Timer;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGltZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUaW1lci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFxRDtBQUVyRCxNQUFxQixLQUFNLFNBQVEscUNBQXFCO0lBRXBELEtBQUs7SUFFTCxDQUFDO0NBRUo7QUFORCx3QkFNQyJ9","assetPath":"Assets/Scripts/Timer.ts","manifest":{"properties":[],"name":"Timer","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: bb99d12c52cc208fc6268cd801292692
+    TicketGuest extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n   
+    }\r\n}\r\nexports.default = TicketGuest;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0R3Vlc3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUaWNrZXRHdWVzdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFxRDtBQUdyRCxNQUFxQixXQUFZLFNBQVEscUNBQXFCO0lBSTFELEtBQUs7SUFFTCxDQUFDO0NBRUo7QUFSRCw4QkFRQyJ9","assetPath":"Assets/Scripts/TicketGame/TicketGuest.ts","manifest":{"properties":[],"name":"TicketGuest","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 6d3a545a27ef86f06211e6aacc962c36
   onlyWriteTrigger: 0
