@@ -18,12 +18,15 @@ ScriptedImporter:
   wrapperTypes: []
   WrapperFilters: []
   wrapperOutputDirectory: Generated
-  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
-    Ticket extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    SetTicket(_movieName,
-    _theaterNum, _round, _dimension, _age, random) {\r\n        this.movieName =
-    _movieName;\r\n        this.theaterNum = _theaterNum;\r\n        this.round =
-    _round;\r\n        this.dimension = _dimension;\r\n        this.age = _age;\r\n   
-    }\r\n}\r\nexports.default = Ticket;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVGlja2V0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXFEO0FBR3JELE1BQXFCLE1BQU8sU0FBUSxxQ0FBcUI7SUFTckQsU0FBUyxDQUFDLFVBQWtCLEVBQUUsV0FBbUIsRUFBRSxNQUFjLEVBQUUsVUFBa0IsRUFBRSxJQUFZLEVBQUUsTUFBYztRQUMvRyxJQUFJLENBQUMsU0FBUyxHQUFHLFVBQVUsQ0FBQztRQUM1QixJQUFJLENBQUMsVUFBVSxHQUFHLFdBQVcsQ0FBQztRQUM5QixJQUFJLENBQUMsS0FBSyxHQUFHLE1BQU0sQ0FBQztRQUNwQixJQUFJLENBQUMsU0FBUyxHQUFHLFVBQVUsQ0FBQztRQUM1QixJQUFJLENBQUMsR0FBRyxHQUFHLElBQUksQ0FBQztJQUNwQixDQUFDO0NBRUo7QUFqQkQseUJBaUJDIn0=","assetPath":"Assets/Scripts/TicketGame/Ticket.ts","manifest":{"properties":[{"assembly":"ZEPETO.World.Gui","name":"screenInfoText","type":"ZEPETO.World.Gui.ZepetoText","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"Ticket","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: f0900c13b20a25563fb9980cab799d76
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nclass
+    Ticket extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    // private round:
+    string;\\r\\n    // private dimension: string; //2D, 3D, 4D \uC5EC\uBD80\\r\\n   
+    // private age: string;\\r\\n    SetTicket(_theaterName, _movieName, _theaterNum,
+    _screenTime, random) {\\r\\n        this.theaterName = _theaterName;\\r\\n       
+    this.movieName = _movieName;\\r\\n        this.theaterNum = _theaterNum;\\r\\n       
+    this.screenTime = _screenTime;\\r\\n        // this.round = _round;\\r\\n       
+    // this.dimension = _dimension;\\r\\n        // this.age = _age;\\r\\n    }\\r\\n}\\r\\nexports.default
+    = Ticket;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVGlja2V0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXFEO0FBR3JELE1BQXFCLE1BQU8sU0FBUSxxQ0FBcUI7SUFPckQseUJBQXlCO0lBQ3pCLDZDQUE2QztJQUM3Qyx1QkFBdUI7SUFFdkIsU0FBUyxDQUFDLFlBQW1CLEVBQUUsVUFBa0IsRUFBRSxXQUFtQixFQUFFLFdBQW1CLEVBQUUsTUFBYztRQUN2RyxJQUFJLENBQUMsV0FBVyxHQUFHLFlBQVksQ0FBQztRQUNoQyxJQUFJLENBQUMsU0FBUyxHQUFHLFVBQVUsQ0FBQztRQUM1QixJQUFJLENBQUMsVUFBVSxHQUFHLFdBQVcsQ0FBQztRQUM5QixJQUFJLENBQUMsVUFBVSxHQUFHLFdBQVcsQ0FBQztRQUM5Qix1QkFBdUI7UUFDdkIsK0JBQStCO1FBQy9CLG1CQUFtQjtJQUN2QixDQUFDO0NBRUo7QUFyQkQseUJBcUJDIn0=\",\"assetPath\":\"Assets/Scripts/TicketGame/Ticket.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"ZEPETO.World.Gui\",\"name\":\"screenInfoText\",\"type\":\"ZEPETO.World.Gui.ZepetoText\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"SerializeField\",\"args\":[]}]}],\"name\":\"Ticket\",\"description\":\"\",\"hasAnimatorMove\":false},\"isCompiled\":true}"
+  typescriptHash: 59528be7a1edf5be403b1c30fefe5e2a
   onlyWriteTrigger: 0

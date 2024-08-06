@@ -10,6 +10,9 @@ export default class TicketScreenInfo extends ZepetoScriptBehaviour {
     private round: string;
     private dimension: string; //2D, 3D, 4D 여부
     private age: string;
+    
+    private date: string;
+    private time: string;
 
     SetScreenInfo(_movieName: string, _theaterNum: string, _round: string, _dimension: string, _age: string): void {
         this.movieName = _movieName;

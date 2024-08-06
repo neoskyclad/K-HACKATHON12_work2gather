@@ -19,8 +19,24 @@ ScriptedImporter:
   WrapperFilters: []
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
-    TicketGuest extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n   
-    }\r\n}\r\nexports.default = TicketGuest;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0R3Vlc3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUaWNrZXRHdWVzdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFxRDtBQUdyRCxNQUFxQixXQUFZLFNBQVEscUNBQXFCO0lBSTFELEtBQUs7SUFFTCxDQUFDO0NBRUo7QUFSRCw4QkFRQyJ9","assetPath":"Assets/Scripts/TicketGame/TicketGuest.ts","manifest":{"properties":[],"name":"TicketGuest","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: 6d3a545a27ef86f06211e6aacc962c36
+    { value: true });\r\nconst __UnityEngine__ = require(\"UnityEngine\");\r\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
+    TicketGuest extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    SetImageByRandom()
+    {\r\n        const rand = Math.floor(Math.random() * this.imageArray.length);\r\n       
+    this.currImage.Texture = this.imageArray[rand];\r\n    }\r\n    SetImageByIndex(_index)
+    {\r\n        this.currImage.Texture = this.imageArray[_index];\r\n    }\r\n   
+    FadeImageIn() {\r\n        if (__UnityEngine__.Object.op_Inequality(this.currImage.Texture,
+    null))\r\n            this.StartCoroutine(this.DoFadeImageIn());\r\n    }\r\n   
+    *DoFadeImageIn() {\r\n        this.currImage.color.a = 0;\r\n        for (let
+    i = 0; i <= 1; i += 0.1) {\r\n            const newColor = this.currImage.color;\r\n           
+    newColor.a = i;\r\n            this.currImage.color = newColor;\r\n           
+    yield new UnityEngine_1.WaitForSeconds(0.02);\r\n        }\r\n        this.currImage.color.a
+    = 1;\r\n    }\r\n    FadeImageOut() {\r\n        if (__UnityEngine__.Object.op_Inequality(this.currImage.Texture,
+    null))\r\n            this.StartCoroutine(this.DoFadeImageOut());\r\n    }\r\n   
+    *DoFadeImageOut() {\r\n        this.currImage.color.a = 1;\r\n        for (let
+    i = 1; i >= 0; i -= 0.1) {\r\n            const newColor = this.currImage.color;\r\n           
+    newColor.a = i;\r\n            this.currImage.color = newColor;\r\n           
+    yield new UnityEngine_1.WaitForSeconds(0.02);\r\n        }\r\n        this.currImage.color.a
+    = 0;\r\n    }\r\n}\r\nexports.default = TicketGuest;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0R3Vlc3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUaWNrZXRHdWVzdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSw2Q0FBNkQ7QUFDN0QsaURBQXFEO0FBR3JELE1BQXFCLFdBQVksU0FBUSxxQ0FBcUI7SUFNMUQsZ0JBQWdCO1FBQ1osTUFBTSxJQUFJLEdBQUcsSUFBSSxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUMsTUFBTSxFQUFFLEdBQUcsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsQ0FBQztRQUVoRSxJQUFJLENBQUMsU0FBUyxDQUFDLE9BQU8sR0FBRyxJQUFJLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQ25ELENBQUM7SUFFRCxlQUFlLENBQUMsTUFBYztRQUMxQixJQUFJLENBQUMsU0FBUyxDQUFDLE9BQU8sR0FBRyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDO0lBQ3JELENBQUM7SUFFRCxXQUFXO1FBQ1AsMkJBa0Ntb1QsYUFBYyxDQWxDN29ULElBQUksQ0FBQyxTQUFTLENBQUMsT0FBTyxFQUFJLElBQUk7WUFDOUIsSUFBSSxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMsYUFBYSxFQUFFLENBQUMsQ0FBQztJQUNsRCxDQUFDO0lBRUQsQ0FBQyxhQUFhO1FBQ1YsSUFBSSxDQUFDLFNBQVMsQ0FBQyxLQUFLLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQztRQUUzQixLQUFLLElBQUksQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsSUFBSSxHQUFHLEVBQUU7WUFDOUIsTUFBTSxRQUFRLEdBQUcsSUFBSSxDQUFDLFNBQVMsQ0FBQyxLQUFLLENBQUM7WUFDdEMsUUFBUSxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUM7WUFDZixJQUFJLENBQUMsU0FBUyxDQUFDLEtBQUssR0FBRyxRQUFRLENBQUM7WUFDaEMsTUFBTSxJQUFJLDRCQUFjLENBQUMsSUFBSSxDQUFDLENBQUM7U0FDbEM7UUFFRCxJQUFJLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQy9CLENBQUM7SUFFRCxZQUFZO1FBQ1IsMkJBZ0Jtb1QsYUFBYyxDQWhCN29ULElBQUksQ0FBQyxTQUFTLENBQUMsT0FBTyxFQUFJLElBQUk7WUFDOUIsSUFBSSxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMsY0FBYyxFQUFFLENBQUMsQ0FBQztJQUNuRCxDQUFDO0lBRUQsQ0FBQyxjQUFjO1FBQ1gsSUFBSSxDQUFDLFNBQVMsQ0FBQyxLQUFLLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQztRQUUzQixLQUFLLElBQUksQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsSUFBSSxHQUFHLEVBQUU7WUFDOUIsTUFBTSxRQUFRLEdBQUcsSUFBSSxDQUFDLFNBQVMsQ0FBQyxLQUFLLENBQUM7WUFDdEMsUUFBUSxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUM7WUFDZixJQUFJLENBQUMsU0FBUyxDQUFDLEtBQUssR0FBRyxRQUFRLENBQUM7WUFDaEMsTUFBTSxJQUFJLDRCQUFjLENBQUMsSUFBSSxDQUFDLENBQUM7U0FDbEM7UUFFRCxJQUFJLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQy9CLENBQUM7Q0FDSjtBQW5ERCw4QkFtREMifQ==","assetPath":"Assets/Scripts/TicketGame/TicketGuest.ts","manifest":{"properties":[{"assembly":"ZEPETO.World.Gui","name":"currImage","type":"ZEPETO.World.Gui.RoundedRectangle","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]},{"assembly":"UnityEngine.CoreModule","name":"imageArray","type":"UnityEngine.Texture[]","isArray":true,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"TicketGuest","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: c9ada86b263fccb29b8c30dc69a8f886
   onlyWriteTrigger: 0

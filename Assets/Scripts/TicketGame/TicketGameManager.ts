@@ -26,8 +26,39 @@ export default class TicketGameManager extends ZepetoScriptBehaviour {
         this.ticket = this.ticketObject.GetComponent<Ticket>();
     }
 
-    Start() {    
-        this.timer.StartTimer(this.timerSec);
+    Start() {
+        this.timer.StartTimer(this.timerSec);   //Set Timer
+        this.SetNewGuest();                     //Set New Guest
+    }
+
+    SetNewGuest() {
+        this.ticketGuest.SetImageByRandom();
+        this.ticketGuest.FadeImageIn();
+        //this.ticket.SetTicket();
+    }
+
+    AcceptGuest() {
+        if (this.CheckDecision()) {
+            this.ticketGuest.FadeImageOut();
+        }
+        else {
+
+        }
+    }
+
+    RejectGuest() {
+        if (this.CheckDecision()) {
+            this.ticketGuest.FadeImageOut();
+        }
+        else {
+
+        }
+    }
+
+    CheckDecision(): boolean {
+        const result = false;
+
+        return result;
     }
 
 }
