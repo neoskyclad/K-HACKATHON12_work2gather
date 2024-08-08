@@ -137,7 +137,10 @@ export default class TicketGameManager extends ZepetoScriptBehaviour {
             }
 
             if (correctCount != 4)
+            {
+                this.currScore += (3 - correctCount);   //bonus
                 result = true;
+            }
         }
 
         return result;
