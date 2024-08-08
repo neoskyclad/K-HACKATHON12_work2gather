@@ -19,14 +19,105 @@ ScriptedImporter:
   WrapperFilters: []
   wrapperOutputDirectory: Generated
   compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
-    \\\"__esModule\\\", { value: true });\\r\\nconst ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nclass
-    Ticket extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    // private round:
-    string;\\r\\n    // private dimension: string; //2D, 3D, 4D \uC5EC\uBD80\\r\\n   
-    // private age: string;\\r\\n    SetTicket(_theaterName, _movieName, _theaterNum,
-    _screenTime, random) {\\r\\n        this.theaterName = _theaterName;\\r\\n       
-    this.movieName = _movieName;\\r\\n        this.theaterNum = _theaterNum;\\r\\n       
-    this.screenTime = _screenTime;\\r\\n        // this.round = _round;\\r\\n       
-    // this.dimension = _dimension;\\r\\n        // this.age = _age;\\r\\n    }\\r\\n}\\r\\nexports.default
-    = Ticket;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVGlja2V0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXFEO0FBR3JELE1BQXFCLE1BQU8sU0FBUSxxQ0FBcUI7SUFPckQseUJBQXlCO0lBQ3pCLDZDQUE2QztJQUM3Qyx1QkFBdUI7SUFFdkIsU0FBUyxDQUFDLFlBQW1CLEVBQUUsVUFBa0IsRUFBRSxXQUFtQixFQUFFLFdBQW1CLEVBQUUsTUFBYztRQUN2RyxJQUFJLENBQUMsV0FBVyxHQUFHLFlBQVksQ0FBQztRQUNoQyxJQUFJLENBQUMsU0FBUyxHQUFHLFVBQVUsQ0FBQztRQUM1QixJQUFJLENBQUMsVUFBVSxHQUFHLFdBQVcsQ0FBQztRQUM5QixJQUFJLENBQUMsVUFBVSxHQUFHLFdBQVcsQ0FBQztRQUM5Qix1QkFBdUI7UUFDdkIsK0JBQStCO1FBQy9CLG1CQUFtQjtJQUN2QixDQUFDO0NBRUo7QUFyQkQseUJBcUJDIn0=\",\"assetPath\":\"Assets/Scripts/TicketGame/Ticket.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"ZEPETO.World.Gui\",\"name\":\"screenInfoText\",\"type\":\"ZEPETO.World.Gui.ZepetoText\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"SerializeField\",\"args\":[]}]}],\"name\":\"Ticket\",\"description\":\"\",\"hasAnimatorMove\":false},\"isCompiled\":true}"
-  typescriptHash: 59528be7a1edf5be403b1c30fefe5e2a
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst
+    UnityEngine_Events_1 = require(\\\"UnityEngine.Events\\\");\\r\\nconst ZEPETO_Script_1
+    = require(\\\"ZEPETO.Script\\\");\\r\\nconst ZEPETO_World_Gui_1 = require(\\\"ZEPETO.World.Gui\\\");\\r\\nconst
+    TicketGameManager_1 = require(\\\"./TicketGameManager\\\");\\r\\nvar TicketInfo;\\r\\n(function
+    (TicketInfo) {\\r\\n    TicketInfo[TicketInfo[\\\"theaterName\\\"] = 0] = \\\"theaterName\\\";\\r\\n   
+    TicketInfo[TicketInfo[\\\"theaterNum\\\"] = 1] = \\\"theaterNum\\\";\\r\\n   
+    TicketInfo[TicketInfo[\\\"movieName\\\"] = 2] = \\\"movieName\\\";\\r\\n    TicketInfo[TicketInfo[\\\"screenTime\\\"]
+    = 3] = \\\"screenTime\\\";\\r\\n})(TicketInfo || (TicketInfo = {}));\\r\\nclass
+    Ticket extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    constructor()
+    {\\r\\n        super(...arguments);\\r\\n        this.ticketInfoTextArray = [null,
+    null, null, null];\\r\\n        this.ticketInfoButtonArray = [null, null, null,
+    null];\\r\\n        this.ticketInfoUnderlineArray = [null, null, null, null];\\r\\n       
+    this.buttonEvent = [null, null, null, null];\\r\\n        this.VariationArray
+    = [\\r\\n            ['\uAE30\uAC00\uBC15\uC2A4(Gigavox) K-Hackerton \uC810',
+    '\uC9C0\uC9C0\uBE0C\uC774(GGV) K-Hackerton \uC810', '', ''],\\r\\n           
+    ['1\uAD00(Laser)', '2\uAD00(Laser)', '3\uAD00(Laser)', '4\uAD00(Laser)'],\\r\\n           
+    ['\uC544\uC6C3\uC0AC\uC774\uB4DC\uC778', '\uC288\uD37C \uBCA0\uD5044', '', ''],\\r\\n           
+    ['17:35 ~ 20:05', '17:30 ~ 20:00', '', '']\\r\\n        ];\\r\\n        this.VariationCount
+    = [1, 3, 1, 1]; //Origin Count - 1\\r\\n        this.currInfoArray = ['', '',
+    '', ''];\\r\\n        this.wrongInfoArray = [false, false, false, false];\\r\\n       
+    this.selectedInfoArray = [false, false, false, false];\\r\\n        this.selectedCount
+    = 0;\\r\\n    }\\r\\n    Awake() {\\r\\n        for (let i = 0; i < 4; i++) {\\r\\n           
+    this.ticketInfoTextArray[i] = this.ticketInfoObject[i].GetComponent($typeof(ZEPETO_World_Gui_1.ZepetoText));\\r\\n           
+    this.ticketInfoButtonArray[i] = this.ticketInfoObject[i].transform.GetChild(0).GetComponent($typeof(ZEPETO_World_Gui_1.RoundedRectangleButton));\\r\\n           
+    this.ticketInfoUnderlineArray[i] = this.ticketInfoObject[i].transform.GetChild(1).gameObject;\\r\\n       
+    }\\r\\n    }\\r\\n    Start() {\\r\\n        this.ticketGameManager = UnityEngine_1.GameObject.Find(\\\"TicketGameManager\\\").GetComponent($typeof(TicketGameManager_1.default));\\r\\n       
+    //Initialize Ticket Info Button\\r\\n        for (let i = 0; i < 4; i++) {\\r\\n           
+    this.buttonEvent[i] = new UnityEngine_Events_1.UnityEvent();\\r\\n           
+    this.buttonEvent[i].AddListener(() => {\\r\\n                //button function\\r\\n               
+    if (this.selectedInfoArray[i]) {\\r\\n                    this.selectedInfoArray[i]
+    = false;\\r\\n                    this.ticketInfoUnderlineArray[i].SetActive(false);\\r\\n                   
+    this.selectedCount--;\\r\\n                }\\r\\n                else {\\r\\n                   
+    this.selectedInfoArray[i] = true;\\r\\n                    this.ticketInfoUnderlineArray[i].SetActive(true);\\r\\n                   
+    this.selectedCount++;\\r\\n                }\\r\\n            });\\r\\n           
+    this.ticketInfoButtonArray[i].OnClick.AddListener(() => {\\r\\n               
+    if (this.buttonEvent[i] != null) {\\r\\n                    this.buttonEvent[i].Invoke();\\r\\n               
+    }\\r\\n            });\\r\\n        }\\r\\n    }\\r\\n    Update() {\\r\\n       
+    if (this.selectedCount > 0) {\\r\\n            this.ticketGameManager.EnableRejectButton();\\r\\n       
+    }\\r\\n        else {\\r\\n            this.ticketGameManager.DisableRejectButton();\\r\\n       
+    }\\r\\n    }\\r\\n    // SetTicketByParam(_theaterName: string, _movieName: string,
+    _theaterNum: string, _screenTime: string): void {\\r\\n    //     this.currTheaterName
+    = _theaterName;\\r\\n    //     this.currMovieName = _movieName;\\r\\n    //    
+    this.currTheaterNum = _theaterNum;\\r\\n    //     this.currScreenTime = _screenTime;\\r\\n   
+    //     this.round = _round;\\r\\n    //     this.dimension = _dimension;\\r\\n   
+    //     this.age = _age;\\r\\n    // }\\r\\n    SetButtonWidth() {\\r\\n    }\\r\\n   
+    SetUnderlineWidth() {\\r\\n    }\\r\\n    SetTicketByWrongCount(wrongCount) {\\r\\n       
+    let caseRand = 0;\\r\\n        for (let i = 0; i < 4; i++)\\r\\n            this.wrongInfoArray[i]
+    = false;\\r\\n        //hard code\\r\\n        switch (wrongCount) {\\r\\n           
+    case 0:\\r\\n                break;\\r\\n            case 1:\\r\\n               
+    caseRand = Math.floor(Math.random() * 4);\\r\\n                switch (caseRand)
+    {\\r\\n                    case 0:\\r\\n                        this.wrongInfoArray[TicketInfo.theaterName]
+    = true;\\r\\n                        break;\\r\\n                    case 1:\\r\\n                       
+    this.wrongInfoArray[TicketInfo.theaterNum] = true;\\r\\n                       
+    break;\\r\\n                    case 2:\\r\\n                        this.wrongInfoArray[TicketInfo.movieName]
+    = true;\\r\\n                        break;\\r\\n                    case 3:\\r\\n                       
+    this.wrongInfoArray[TicketInfo.screenTime] = true;\\r\\n                       
+    break;\\r\\n                }\\r\\n                break;\\r\\n            case
+    2:\\r\\n                caseRand = Math.floor(Math.random() * 6);\\r\\n               
+    switch (caseRand) {\\r\\n                    case 0:\\r\\n                       
+    this.wrongInfoArray[TicketInfo.theaterName] = true;\\r\\n                       
+    this.wrongInfoArray[TicketInfo.theaterNum] = true;\\r\\n                       
+    break;\\r\\n                    case 1:\\r\\n                        this.wrongInfoArray[TicketInfo.theaterName]
+    = true;\\r\\n                        this.wrongInfoArray[TicketInfo.movieName]
+    = true;\\r\\n                        break;\\r\\n                    case 2:\\r\\n                       
+    this.wrongInfoArray[TicketInfo.theaterName] = true;\\r\\n                       
+    this.wrongInfoArray[TicketInfo.screenTime] = true;\\r\\n                       
+    break;\\r\\n                    case 3:\\r\\n                        this.wrongInfoArray[TicketInfo.theaterNum]
+    = true;\\r\\n                        this.wrongInfoArray[TicketInfo.movieName]
+    = true;\\r\\n                        break;\\r\\n                    case 4:\\r\\n                       
+    this.wrongInfoArray[TicketInfo.theaterNum] = true;\\r\\n                       
+    this.wrongInfoArray[TicketInfo.screenTime] = true;\\r\\n                       
+    break;\\r\\n                    case 5:\\r\\n                        this.wrongInfoArray[TicketInfo.movieName]
+    = true;\\r\\n                        this.wrongInfoArray[TicketInfo.screenTime]
+    = true;\\r\\n                        break;\\r\\n                }\\r\\n               
+    break;\\r\\n            case 3:\\r\\n                for (let i = 0; i < 4; i++)\\r\\n                   
+    this.wrongInfoArray[i] = true;\\r\\n                caseRand = Math.floor(Math.random()
+    * 4);\\r\\n                switch (caseRand) {\\r\\n                    case
+    0:\\r\\n                        this.wrongInfoArray[TicketInfo.theaterName] =
+    false;\\r\\n                        break;\\r\\n                    case 1:\\r\\n                       
+    this.wrongInfoArray[TicketInfo.theaterNum] = false;\\r\\n                       
+    break;\\r\\n                    case 2:\\r\\n                        this.wrongInfoArray[TicketInfo.movieName]
+    = false;\\r\\n                        break;\\r\\n                    case 3:\\r\\n                       
+    this.wrongInfoArray[TicketInfo.screenTime] = false;\\r\\n                       
+    break;\\r\\n                }\\r\\n                break;\\r\\n            case
+    4:\\r\\n                for (let i = 0; i < 4; i++)\\r\\n                   
+    this.wrongInfoArray[i] = true;\\r\\n                break;\\r\\n            default:\\r\\n               
+    break;\\r\\n        }\\r\\n        for (let i = 0; i < 4; i++) {\\r\\n           
+    if (this.wrongInfoArray[i]) {\\r\\n                this.currInfoArray[i] = this.VariationArray[i][Math.floor(Math.random()
+    * this.VariationCount[i]) + 1];\\r\\n                this.ticketInfoTextArray[i].text
+    = this.currInfoArray[i];\\r\\n            }\\r\\n            else {\\r\\n               
+    this.currInfoArray[i] = this.VariationArray[i][0];\\r\\n                this.ticketInfoTextArray[i].text
+    = this.currInfoArray[i];\\r\\n            }\\r\\n        }\\r\\n        // //random
+    seat number\\r\\n        var asciiNum = Math.floor(Math.random() * 16) + 65;\\r\\n       
+    let seatCol = String.fromCharCode(asciiNum);\\r\\n        let seatRow = this.pad(Math.floor(Math.random()
+    * 27) + 1);\\r\\n        this.seatInfoText.text = `${seatCol}\uC5F4 ${seatRow}\uBC88`;\\r\\n       
+    //Initialize Underline\\r\\n        this.SetUnderlineWidth();\\r\\n        for
+    (let i = 0; i < 4; i++) {\\r\\n            this.ticketInfoUnderlineArray[i].SetActive(false);\\r\\n           
+    this.selectedInfoArray[i] = false;\\r\\n        }\\r\\n        this.selectedCount
+    = 0;\\r\\n    }\\r\\n    pad(num) {\\r\\n        return num.toString().padStart(3,
+    '0');\\r\\n    }\\r\\n}\\r\\nexports.default = Ticket;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVGlja2V0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQXdEO0FBQ3hELDJEQUFnRDtBQUNoRCxpREFBcUQ7QUFDckQsdURBQXNFO0FBQ3RFLDJEQUFvRDtBQUVwRCxJQUFLLFVBS0o7QUFMRCxXQUFLLFVBQVU7SUFDWCx5REFBVyxDQUFBO0lBQ1gsdURBQVUsQ0FBQTtJQUNWLHFEQUFTLENBQUE7SUFDVCx1REFBVSxDQUFBO0FBQ2QsQ0FBQyxFQUxJLFVBQVUsS0FBVixVQUFVLFFBS2Q7QUFDRCxNQUFxQixNQUFPLFNBQVEscUNBQXFCO0lBQXpEOztRQUtZLHdCQUFtQixHQUFpQixDQUFDLElBQUksRUFBRSxJQUFJLEVBQUUsSUFBSSxFQUFFLElBQUksQ0FBQyxDQUFDO1FBQzdELDBCQUFxQixHQUE2QixDQUFDLElBQUksRUFBRSxJQUFJLEVBQUUsSUFBSSxFQUFFLElBQUksQ0FBQyxDQUFDO1FBQzNFLDZCQUF3QixHQUFpQixDQUFDLElBQUksRUFBRSxJQUFJLEVBQUUsSUFBSSxFQUFFLElBQUksQ0FBQyxDQUFDO1FBQ2xFLGdCQUFXLEdBQWlCLENBQUMsSUFBSSxFQUFFLElBQUksRUFBRSxJQUFJLEVBQUUsSUFBSSxDQUFDLENBQUM7UUFJckQsbUJBQWMsR0FBZTtZQUNqQyxDQUFDLDZCQUE2QixFQUFFLHlCQUF5QixFQUFFLEVBQUUsRUFBRSxFQUFFLENBQUM7WUFDbEUsQ0FBQyxXQUFXLEVBQUUsV0FBVyxFQUFFLFdBQVcsRUFBRSxXQUFXLENBQUM7WUFDcEQsQ0FBQyxRQUFRLEVBQUUsUUFBUSxFQUFFLEVBQUUsRUFBRSxFQUFFLENBQUM7WUFDNUIsQ0FBQyxlQUFlLEVBQUUsZUFBZSxFQUFFLEVBQUUsRUFBRSxFQUFFLENBQUM7U0FDN0MsQ0FBQztRQUVNLG1CQUFjLEdBQWEsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxFQUFFLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FB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\",\"assetPath\":\"Assets/Scripts/TicketGame/Ticket.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"UnityEngine.CoreModule\",\"name\":\"ticketInfoObject\",\"type\":\"UnityEngine.GameObject[]\",\"isArray\":true,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"ZEPETO.World.Gui\",\"name\":\"seatInfoText\",\"type\":\"ZEPETO.World.Gui.ZepetoText\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"mscorlib\",\"name\":\"currInfoArray\",\"type\":\"System.String[]\",\"isArray\":true,\"initValue\":[\"\",\"\",\"\",\"\"],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"HideInInspector\",\"args\":[]}]},{\"assembly\":\"mscorlib\",\"name\":\"selectedInfoArray\",\"type\":\"System.Boolean[]\",\"isArray\":true,\"initValue\":[\"\",\"\",\"\",\"\"],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]}],\"name\":\"Ticket\",\"description\":\"\",\"hasAnimatorMove\":false},\"isCompiled\":true}"
+  typescriptHash: c81a0008760dada8d61e4e559126c70a
   onlyWriteTrigger: 0

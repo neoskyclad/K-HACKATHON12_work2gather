@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CheckTicket2.unity
+    path: Assets/Scenes/(obsolete)CheckTicket.unity
     guid: 4950a937a613549baa198138952cae55
   m_configObjects: {}

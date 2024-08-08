@@ -19,13 +19,19 @@ ScriptedImporter:
   WrapperFilters: []
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
-    TicketScreenInfo extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    SetScreenInfo(_movieName,
-    _theaterNum, _round, _dimension, _age) {\r\n        this.movieName = _movieName;\r\n       
-    this.theaterNum = _theaterNum;\r\n        this.round = _round;\r\n        this.dimension
-    = _dimension;\r\n        this.age = _age;\r\n        this.screenInfoText.text
-    = `${this.movieName} + '' | '' + ${this.theaterNum} + '' | '' +\n        ${this.round}
-    + '' | '' + ${this.dimension} + '', '' + ${this.age}`;\r\n    }\r\n}\r\nexports.default
-    = TicketScreenInfo;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0U2NyZWVuSW5mby5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIlRpY2tldFNjcmVlbkluZm8udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSxpREFBcUQ7QUFHckQsTUFBcUIsZ0JBQWlCLFNBQVEscUNBQXFCO0lBWS9ELGFBQWEsQ0FBQyxVQUFrQixFQUFFLFdBQW1CLEVBQUUsTUFBYyxFQUFFLFVBQWtCLEVBQUUsSUFBWTtRQUNuRyxJQUFJLENBQUMsU0FBUyxHQUFHLFVBQVUsQ0FBQztRQUM1QixJQUFJLENBQUMsVUFBVSxHQUFHLFdBQVcsQ0FBQztRQUM5QixJQUFJLENBQUMsS0FBSyxHQUFHLE1BQU0sQ0FBQztRQUNwQixJQUFJLENBQUMsU0FBUyxHQUFHLFVBQVUsQ0FBQztRQUM1QixJQUFJLENBQUMsR0FBRyxHQUFHLElBQUksQ0FBQztRQUVoQixJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksR0FBRyxHQUFHLElBQUksQ0FBQyxTQUFTLGNBQWMsSUFBSSxDQUFDLFVBQVU7VUFDdkUsSUFBSSxDQUFDLEtBQUssY0FBYyxJQUFJLENBQUMsU0FBUyxhQUFhLElBQUksQ0FBQyxHQUFHLEVBQUUsQ0FBQztJQUNwRSxDQUFDO0NBQ0o7QUF0QkQsbUNBc0JDIn0=","assetPath":"Assets/Scripts/TicketGame/TicketScreenInfo.ts","manifest":{"properties":[{"assembly":"ZEPETO.World.Gui","name":"screenInfoText","type":"ZEPETO.World.Gui.ZepetoText","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"TicketScreenInfo","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: 769b6010eb180e11eecbefa1ec80d73b
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nvar
+    TicketInfo;\r\n(function (TicketInfo) {\r\n    TicketInfo[TicketInfo[\"theaterName\"]
+    = 0] = \"theaterName\";\r\n    TicketInfo[TicketInfo[\"theaterNum\"] = 1] = \"theaterNum\";\r\n   
+    TicketInfo[TicketInfo[\"movieName\"] = 2] = \"movieName\";\r\n    TicketInfo[TicketInfo[\"screenTime\"]
+    = 3] = \"screenTime\";\r\n})(TicketInfo || (TicketInfo = {}));\r\nclass TicketScreenInfo
+    extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor() {\r\n       
+    super(...arguments);\r\n        this.screenInfo = ['''', '''', '''', ''''];\r\n   
+    }\r\n    SetScreenInfo(_theaterName, _theaterNum, _movieName, _screenTime) {\r\n       
+    this.screenInfo[TicketInfo.theaterName] = _theaterName;\r\n        this.screenInfo[TicketInfo.theaterNum]
+    = _theaterNum;\r\n        this.screenInfo[TicketInfo.movieName] = _movieName;\r\n       
+    this.screenInfo[TicketInfo.screenTime] = _screenTime;\r\n        // this.screenInfoText.text
+    = `${this.movieName} + '' | '' + ${this.theaterNum} + '' | '' +\r\n        //
+    ${this.round} + '' | '' + ${this.dimension} + '', '' + ${this.age}`;\r\n    }\r\n}\r\nexports.default
+    = TicketScreenInfo;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlja2V0U2NyZWVuSW5mby5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIlRpY2tldFNjcmVlbkluZm8udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSxpREFBcUQ7QUFHckQsSUFBSyxVQUtKO0FBTEQsV0FBSyxVQUFVO0lBQ1gseURBQVcsQ0FBQTtJQUNYLHVEQUFVLENBQUE7SUFDVixxREFBUyxDQUFBO0lBQ1QsdURBQVUsQ0FBQTtBQUNkLENBQUMsRUFMSSxVQUFVLEtBQVYsVUFBVSxRQUtkO0FBRUQsTUFBcUIsZ0JBQWlCLFNBQVEscUNBQXFCO0lBQW5FOztRQUdXLGVBQVUsR0FBYSxDQUFDLEVBQUUsRUFBRSxFQUFFLEVBQUUsRUFBRSxFQUFFLEVBQUUsQ0FBQyxDQUFDO0lBZ0JuRCxDQUFDO0lBVEcsYUFBYSxDQUFDLFlBQW9CLEVBQUUsV0FBbUIsRUFBRSxVQUFrQixFQUFFLFdBQW1CO1FBQzVGLElBQUksQ0FBQyxVQUFVLENBQUMsVUFBVSxDQUFDLFdBQVcsQ0FBQyxHQUFHLFlBQVksQ0FBQztRQUN2RCxJQUFJLENBQUMsVUFBVSxDQUFDLFVBQVUsQ0FBQyxVQUFVLENBQUMsR0FBRyxXQUFXLENBQUM7UUFDckQsSUFBSSxDQUFDLFVBQVUsQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLEdBQUcsVUFBVSxDQUFDO1FBQ25ELElBQUksQ0FBQyxVQUFVLENBQUMsVUFBVSxDQUFDLFVBQVUsQ0FBQyxHQUFHLFdBQVcsQ0FBQztRQUVyRCx1RkFBdUY7UUFDdkYsbUVBQW1FO0lBQ3ZFLENBQUM7Q0FDSjtBQW5CRCxtQ0FtQkMifQ==","assetPath":"Assets/Scripts/TicketGame/TicketScreenInfo.ts","manifest":{"properties":[{"assembly":"ZEPETO.World.Gui","name":"screenInfoText","type":"ZEPETO.World.Gui.ZepetoText","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]},{"assembly":"mscorlib","name":"screenInfo","type":"System.String[]","isArray":true,"initValue":["","","",""],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"TicketScreenInfo","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 6a5c8ebf6a75351f8b12adb17d8e3512
   onlyWriteTrigger: 0
